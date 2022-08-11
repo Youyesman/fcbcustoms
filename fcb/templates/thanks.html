@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link href="../static/css/index.css" rel="stylesheet" type="text/css" />
+	<link href="../static/css/feedback.css" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>UR-Type을 사용해 주셔서 감사합니다.</h2>
+		보내주신 피드백은 반영될 수 있도록 노력하겠습니다.
+		<br/><br/>
+		<form action="Send_Email" method="POST" id="Send_Email"> {% csrf_token %}
+			제목 : <input type="text" name="title" id="title">
+			<br/><br/>
+			<textarea rows="10" cols="50" name="message" id="message"></textarea>
+		</form>
+		<button class="glow-on-hover" type="button"> Send Feedback </button>
+	</div>
+</body>
+
+<script type="text/javascript">
+	/* 유효성 검사 후 값 전송 */
+	$('.glow-on-hover').click(function(){
+		if( $('#title').val() == '' || $('#message').val() == '') {
+			alert("제목과 내용을 입력해 주세요.");
+		}
+		Send_Email.submit();
+	})
+</script>
+</html>

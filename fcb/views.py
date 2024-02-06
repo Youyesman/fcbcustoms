@@ -28,7 +28,7 @@ def index(request):
             })
             
             print('the form was valid')
-            send_mail('문의사항이 도착했습니다.','This is the message','yyw0209@hanmail.net',['pakjongwk@gmail.com','customs@familyexp.com'],html_message=html)
+            send_mail('문의사항이 도착했습니다.','This is the message','yyw0209@hanmail.net',['pakjongwk@gmail.com'],html_message=html)
             
             return redirect('index')
     else:

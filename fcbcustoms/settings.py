@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-e8w=yh7qtd*abp7wbckx*tm2j6#6!s#!0^z-c8imof#&)1s&9x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost','fcbcustoms.com','m.fcbcustoms.com','www.fcbcustoms.com','127.0.0.1']
 
 
 # Application definition
@@ -77,17 +77,13 @@ WSGI_APPLICATION = 'fcbcustoms.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fcbcustoms',
-        'USER' : 'postgres',
-        'PASSWORD' : 'petrucci12!@',
-        'HOST':'localhost',
-        'PORT':'5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -132,12 +128,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_HOST = 'smtp.daum.net'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = 'yyw0209@hanmail.net'
-EMAIL_HOST_PASSWORD = 'petrucci23@#'
+EMAIL_HOST = 'mail.w.familyexp.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'leslie@familyexp.com'
+EMAIL_HOST_PASSWORD = 'ledvelvet1492*!'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-EMAIL_USE_SSL = True
+# EMAIL_USE_SSL = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 import dj_database_url

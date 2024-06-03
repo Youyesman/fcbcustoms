@@ -9,8 +9,8 @@ https://docs.djangoproject.com/en/4.0/howto/deployment/wsgi/
 
 import os,sys
 
-sys.path.append('/home/oem/fcbcustoms')
-sys.path.append('/home/oem/fcbcustoms/venv/lib/python3.8/site-packages')
+sys.path.append('/home/fcbcustoms')
+sys.path.append('/home/fcbcustoms/venv/lib/python3.10/site-packages')
 
 from django.core.wsgi import get_wsgi_application
 
